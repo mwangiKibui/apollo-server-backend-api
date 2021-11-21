@@ -115,8 +115,9 @@ const resolvers = {
 
 // Instanciate apollo server
 const server = new ApolloServer({typeDefs,resolvers,cors:false});
+const PORT = process.env.PORT || 4000;
 
 // Launch web server using listen
-server.listen().then( ({url}) => {
+server.listen(PORT).then( ({url}) => {
     console.log(`server started on ${url}`);
 });
