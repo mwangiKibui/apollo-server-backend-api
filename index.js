@@ -114,7 +114,10 @@ const resolvers = {
 }
 
 // Instanciate apollo server
-const server = new ApolloServer({typeDefs,resolvers,cors:false});
+const server = new ApolloServer({typeDefs,resolvers,cors:{
+    credentials:true,
+    origin:'*'
+}});
 const PORT = process.env.PORT || 4000;
 
 // Launch web server using listen
