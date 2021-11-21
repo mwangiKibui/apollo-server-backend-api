@@ -116,6 +116,8 @@ const resolvers = {
 // Instanciate apollo server
 const server = new ApolloServer({typeDefs,resolvers});
 
+server.applyMiddleware({corsOptions:{credentials:true,origin:true}});
+
 // Launch web server using listen
 server.listen().then( ({url}) => {
     console.log(`server started on ${url}`);
