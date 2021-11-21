@@ -115,8 +115,8 @@ const resolvers = {
 
 // Instanciate apollo server
 const server = new ApolloServer({typeDefs,resolvers,cors:{
-credentials:true,
-origin:true
+    credentials:true,
+    origin:"*"
 }});
 
 // Launch web server using listen
